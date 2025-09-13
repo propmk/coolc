@@ -29,10 +29,7 @@
 #define HIDE_CURSOR "\033[?25l"
 #define SHOW_CURSOR "\033[?25h"
 
-#define setState(state) printf("%s", state)
-#define resetState() printf(RESET)
-
-static void drawTitleBox(const char *title) {
+static inline void drawTitleBox(const char *title) {
     int len = strlen(title);
 
     printf("┌");
@@ -46,7 +43,7 @@ static void drawTitleBox(const char *title) {
     printf("┘\n");
 }
 
-static void drawMenuBox(const char *options[], int n) {
+static inline void drawMenuBox(const char *options[], int n) {
     int maxLen = 0;
     for (int i = 0; i < n; i++) {
         int len = strlen(options[i]) + 3;
@@ -64,6 +61,14 @@ static void drawMenuBox(const char *options[], int n) {
     printf("└");
     for (int i = 0; i < maxLen + 3; i++) printf("─");
     printf("┘\n");
+}
+
+static inline void setState(const char *state) {
+    printf("%s", state);
+}
+
+static inline void resetState(void) {
+    printf(RESET);
 }
 
 #endif 

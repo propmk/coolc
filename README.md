@@ -1,2 +1,2 @@
 # coolc
-C library for doing cool things inside the terminal. Inspired by ncurses.
+C library for making Terminal User Interfaces or TUIs. Inspired by ncurses.

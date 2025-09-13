@@ -18,7 +18,7 @@ static void drawTitleBox(const char *title) {
     printf("┘\n");
 }
 
-static void drawMenu(const char *options[], int n) {
+static void drawMenuBox(const char *options[], int n) {
     int maxLen = 0;
     for (int i = 0; i < n; i++) {
         int len = strlen(options[i]) + 3;
